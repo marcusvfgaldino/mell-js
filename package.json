@@ -1,0 +1,29 @@
+{
+  "name": "mell-js",
+  "version": "0.0.1",
+  "description": "A small framework for web developers to manipulate the DOM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusvfgaldino/mell-js.git"
+  },
+  "keywords": [
+    "js",
+    "framework",
+    "plugin"
+  ],
+  "author": "Facili Digital",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcusvfgaldino/mell-js/issues"
+  },
+  "homepage": "https://github.com/marcusvfgaldino/mell-js#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0"
+  }
+}
