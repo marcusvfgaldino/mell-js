@@ -11,7 +11,7 @@ gulp.task('compress', async function() {
 });
 
 gulp.task('scripts', async function() {
-    return gulp.src(['Mell/insert.js', 'Mell/delete.js', 'Mell/index.js'])
+    return gulp.src(['Mell/html.js', 'Mell/class.js', 'Mell/click.js', 'Mell/index.js'])
       .pipe(concat('mell.js'))
       .pipe(gulp.dest('./'));
 });

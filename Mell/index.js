@@ -1,4 +1,5 @@
 const mell =  {
-    insert: insert,
-    remove: remove
+    html: html,
+    class: modclass,
+    click: click
 }
