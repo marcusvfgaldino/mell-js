@@ -16,12 +16,22 @@ const html = {
         this.makeDelete();
     },
 
+    get(element) {
+        this.atribute = document.querySelector(element);
+        return this.makeGet();
+    },
+
     makeInsert() {
         local = this.atribute;
-        local.insertAdjacentHTML(this.loc, this.html);
+        local.insertAdjacentHTML(this.loc, this.content);
     },
 
     makeDelete() {
         this.atribute.remove();
+    },
+
+    makeGet() {
+        var content = this.atribute.innerHTML;
+        return content;
     }
 }

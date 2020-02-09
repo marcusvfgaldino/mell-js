@@ -16,13 +16,23 @@ const html = {
         this.makeDelete();
     },
 
+    get(element) {
+        this.atribute = document.querySelector(element);
+        return this.makeGet();
+    },
+
     makeInsert() {
         local = this.atribute;
-        local.insertAdjacentHTML(this.loc, this.html);
+        local.insertAdjacentHTML(this.loc, this.content);
     },
 
     makeDelete() {
         this.atribute.remove();
+    },
+
+    makeGet() {
+        var content = this.atribute.innerHTML;
+        return content;
     }
 }
 modclass = {
@@ -58,11 +68,16 @@ const click = function(element, event) {
     atribute.onclick = make(event);
 }
 
+const docready = function(event) {
+    document.addEventListener("DOMContentLoaded", make(event));
+}
+
 function make(event) {
     return event;
 }
 const mell =  {
     html: html,
     class: modclass,
-    click: click
+    click: click,
+    docready: docready
 }
