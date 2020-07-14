@@ -116,5 +116,13 @@ Get HTML code of DOM
  var code = mell.html.get("#green"); //Stores the element's html code with id 'green' in the variable
 ```
 
+#### mell.load(url)
+
+It brings a specific file content or url. Can be used to consume api
+
+```js
+ var reponse = mell.load("https://api.com/consume"); //Stores response of url in the variable 'response'
+```
+
 
 
