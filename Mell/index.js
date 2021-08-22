@@ -3,5 +3,7 @@ const mell =  {
     class: modclass,
     click: click,
     docready: docready,
-    load: load
+    load: load,
+    element: modelement,
+    focus: modfocus
 }

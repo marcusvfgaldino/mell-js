@@ -1,3 +1,83 @@
+modclass = {
+    content: null,
+    atribute: null,
+
+    add(param, element) {
+        this.content = param;
+        this.atribute = document.querySelector(element);
+
+        this.makeAdd();
+    },
+
+    remove(param, element) {
+        this.content = param;
+        this.atribute = document.querySelector(element);
+
+        this.makeRemove();
+    },
+
+    makeAdd() {
+        local = this.atribute;
+        local.classList.add(this.content);
+    },
+
+    makeRemove() {
+        local = this.atribute;
+        local.classList.remove(this.content);
+    }
+}
+modelement = {
+    atribute: null,
+
+    show(element) {
+        this.atribute = document.querySelector(element);
+
+        this.makeShow();
+    },
+
+    hide(element) {
+        this.atribute = document.querySelector(element);
+
+        this.makeHide();
+    },
+
+    remove(element) {
+        this.atribute = document.querySelector(element);
+
+        this.makeRemove();
+    },
+
+    makeShow() {
+        local = this.atribute;
+        local.style.display = "block";
+    },
+
+    makeHide() {
+        local = this.atribute;
+        local.style.display = "none";
+    },
+
+    makeRemove() {
+        local = this.atribute;
+        local.parentNode.removeChild(local);
+    }
+}
+const click = function(element, event) {
+    atribute =  document.querySelector(element);
+    atribute.onclick = make(event);
+}
+
+const docready = function(event) {
+    document.addEventListener("DOMContentLoaded", make(event));
+}
+
+function make(event) {
+    return event;
+}
+const modfocus = function(element) {
+    atribute = document.querySelector(element)
+    atribute.focus()
+}
 const html = {
     content: null,
     atribute: null,
@@ -35,52 +115,12 @@ const html = {
         return content;
     }
 }
-modclass = {
-    content: null,
-    atribute: null,
-
-    add(param, element) {
-        this.content = param;
-        this.atribute = document.querySelector(element);
-
-        this.makeAdd();
-    },
-
-    remove(param, element) {
-        this.content = param;
-        this.atribute = document.querySelector(element);
-
-        this.makeRemove();
-    },
-
-    makeAdd() {
-        local = this.atribute;
-        local.classList.add(this.content);
-    },
-
-    makeRemove() {
-        local = this.atribute;
-        local.classList.remove(this.content);
-    }
-}
-const click = function(element, event) {
-    atribute =  document.querySelector(element);
-    atribute.onclick = make(event);
-}
-
-const docready = function(event) {
-    document.addEventListener("DOMContentLoaded", make(event));
-}
-
-function make(event) {
-    return event;
-}
-const load  = function (url, atribute) {
+const load  = function (url) {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.readyState + " / " + this.status);
-            html.insert(xhttp.responseText, atribute, "beforebegin");
+            return xhttp.responseText;
          } else {
              console.log(this.readyState + " / " + this.status);
          }
@@ -93,5 +133,7 @@ const mell =  {
     class: modclass,
     click: click,
     docready: docready,
-    load: load
+    load: load,
+    element: modelement,
+    focus: modfocus
 }
